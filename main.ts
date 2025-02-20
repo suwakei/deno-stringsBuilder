@@ -5,6 +5,7 @@ class ByteStringBuilder {
         this.parts.push(data);
         return this;
     }
+テストとベンチマークとci/cdは必ず書く
 
     toString(): string {
         const length = this.parts.reduce((acc, part) => acc + part.length, 0);
