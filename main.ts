@@ -1,8 +1,9 @@
 class ByteStringBuilder {
-    private parts: Uint8Array[] = [];
+    private buf: Uint8Array[] = [];
+    te new TextEncoder()
 
-    append(data: Uint8Array): this {
-        this.parts.push(data);
+    append(data: string): this {
+        this.parts.push(te.encode(data));
         return this;
     }
 テストとベンチマークとci/cdは必ず書く
