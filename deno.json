@@ -3,7 +3,9 @@
   "compilerOptions": {
     "allowJs": true,
     "lib": ["deno.window"],
-    "strict": true
+    "strict": true,
+"noUnusedLocals": true,
+    "noUnusedParameters": true
     // ...etc
   },
 
