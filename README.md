@@ -1,7 +1,7 @@
 # deno-stringsBuilder
 
 ## Overview
-This repository is a library that supports string manipulation in Deno. It provides the StringBuilder class for efficiently constructing strings.
+This repository is a library that supports<br> string manipulation in Deno. It provides the StringBuilder classfor efficiently constructing strings.
 
 ## Installation
 
