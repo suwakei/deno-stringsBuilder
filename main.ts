@@ -1,12 +1,11 @@
 class StringBuilder {
-    private buf: Uint8Array[] = [];
-    private te new TextEncoder()
+    private parts: Uint8Array[] = [];
+    private te: TextEncoder = new TextEncoder();
 
     append(data: string): this {
-        this.parts.push(te.encode(data));
+        this.parts.push(this.te.encode(data));
         return this;
     }
-テストとベンチマークとci/cdは必ず書く
 
     toString(): string {
         const length = this.parts.reduce((acc, part) => acc + part.length, 0);
@@ -21,15 +20,15 @@ class StringBuilder {
         return new TextDecoder().decode(result);
     }
 
-    clear(): this {
+    reset(): this {
         this.parts = [];
         return this;
     }
 }
 
 // 使用例
-const sb = new ByteStringBuilder();
-sb.append(new TextEncoder().encode("Hello, ")).append(new TextEncoder().encode("World!"));
+const sb = new StringBuilder();
+sb.append("Hello, ").append("World!");
 console.log(sb.toString()); // 出力: "Hello, World!"
-sb.clear();
+sb.reset();
 console.log(sb.toString()); // 出力: ""
