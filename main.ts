@@ -1,6 +1,6 @@
-class ByteStringBuilder {
+class StringBuilder {
     private buf: Uint8Array[] = [];
-    te new TextEncoder()
+    private te new TextEncoder()
 
     append(data: string): this {
         this.parts.push(te.encode(data));
