@@ -22,6 +22,10 @@ console.log(sb.toString()); // 出力: "Hello, World!"
 
 ### reset string
 ```typescript
+import { StringBuilder } from "./mod.ts";
 
-
+const sb = new StringBuilder();
+sb.append("Hello, ").append("World!");
+sb.clear();
+console.log(sb.toString()); // 出力: ""
 ```
