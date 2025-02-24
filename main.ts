@@ -2,7 +2,7 @@ class StringBuilder {
     private parts: Uint8Array[] = [];
     private te: TextEncoder = new TextEncoder();
 
-    append(data: string): this {
+    write_string(data: string): this {
         this.parts.push(this.te.encode(data));
         return this;
     }
