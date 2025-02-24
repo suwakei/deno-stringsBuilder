@@ -24,6 +24,11 @@ class StringBuilder {
         this.buf = [];
         return this;
     }
+
+grow(size: number): this {
+        this.buf.push(new Uint8Array(size));
+        return this;
+    }
 }
 
 // 使用例
