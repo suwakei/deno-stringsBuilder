@@ -1,18 +1,18 @@
 class StringBuilder {
-    private parts: Uint8Array[] = [];
+    private 　buf: Uint8Array[] = [];
     private te: TextEncoder = new TextEncoder();
 
     write_string(data: string): this {
-        this.parts.push(this.te.encode(data));
+        this.buf.push(this.te.encode(data));
         return this;
     }
 
     toString(): string {
-        const length = this.parts.reduce((acc, part) => acc + part.length, 0);
+        const length = this.buf.reduce((acc, part) => acc + buf.length, 0);
         const result = new Uint8Array(length);
         let offset = 0;
 
-        for (const part of this.parts) {
+        for (const part of this.buf) {
             result.set(part, offset);
             offset += part.length;
         }
@@ -21,7 +21,7 @@ class StringBuilder {
     }
 
     reset(): this {
-        this.parts = [];
+        this.buf = [];
         return this;
     }
 }
